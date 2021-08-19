@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <style>
+
+    </style>
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <meta charset="UTF-8">
+    <title>Tippr</title>
+</head>
+<body>
+    <h1 id="head">
+        Tippr
+    </h1>
+
+    <h2 id="subhead">
+        Tips Made Easier
+    </h2>
+
+    <div id="createaccount">
+        <p><b><a href="{{ url_for('login') }}">Create An Account</b></a><br>
+        Create your account today and start saving time and money while making sure your employees accurately get the
+        tips they earned. Now that's what we call efficiency.</p>
+    </div>
+
+    <div id="about">
+        <p><b>About</b><br>
+            Tippr was created to be a better solution for calculating tips. It was inspired by the time-consuming
+            tip calculation at an international drink chain.
+        </p>
+    </div>
+
+    <div id="features">
+        <p><b>Features</b><br>
+        <ul>
+            <li>Add and remove employees easily</li>
+            <li>Give managers easy access to your dashboard</li>
+            <li>Glean insight about tips over time</li>
+        </ul></p>
+    </div>
+
+    <div id="login">
+        <button type="button" onclick="window.location.href='{{ url_for('login') }}' " >Login</button>
+    </div>
+
+</body>
+</html>
