@@ -12,18 +12,24 @@ def home():
 def login():
     return render_template("login.html")
 
-#@app.route("/add", methods=["POST", "GET"])
-#def add():
-#    if request.method=='GET':
-#        return render_template("addtest.html")
+@app.route("/add", methods=["POST", "GET"])
+def add():
+    if request.method=='GET':
+        return render_template("addtest.html")
+    if request.method=='POST':
+        names = request.form['mytext[]']
+        return render_template('addresults.html', names=names)
 
 @app.route('/addresults', methods=["POST", "GET"])
 def results():
     if request.method=='GET':
-        render_template('addresults.html')
+        return render_template("addresults.html")
     if request.method=='POST':
-        names = request.form.getlist['mytext[]']
-        return names
+        names = request.form['flname']
+        return render_template('addresults.html', names=names)
+
+
+
 
 
 
