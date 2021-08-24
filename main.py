@@ -10,30 +10,34 @@ def home():
 
 @app.route("/login")
 def login():
-    return render_template("login.html")
+    if request.method=='POST':
+        username = request.form['email']
+        password = request.form['psw']
+        return render_template('loginboot.html', user=username, pword=password)
+    return render_template("loginboot.html")
+
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
 
 @app.route("/add", methods=["POST", "GET"])
 def add():
     if request.method=='GET':
-        return render_template("addtest.html")
+        return render_template("add.html")
     if request.method=='POST':
-        names = request.form['mytext[]']
+        names = request.form.getlist('textbox')
         return render_template('addresults.html', names=names)
 
 @app.route('/addresults', methods=["POST", "GET"])
 def results():
-    if request.method=='GET':
-        return render_template("addresults.html")
     if request.method=='POST':
-        names = request.form['flname']
+        names = request.form['textbox']
         return render_template('addresults.html', names=names)
+    return render_template("addresults.html")
 
-
-
-
-
-
-
+@app.route('/api/<name>/<token>')
+def api(name, token):
+    return f"<h1>{name} {token}</h1>"
 
 if __name__ == "__main__":
     app.run(debug=True)

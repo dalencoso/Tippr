@@ -5,11 +5,9 @@
     <title>Results</title>
 </head>
 <body>
-<h1>{{ names }}</h1>
-<form name="name" method="post" action="">
-    <input type="text" name="flname">
-    <input type="submit" name="submit">
+{% for name in names %}
+    <li>{{ name }}</li>
+    {% endfor %}
 
-</form>
 </body>
 </html>

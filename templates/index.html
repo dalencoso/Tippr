@@ -1,47 +1,83 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-    <style>
+<!doctype html>
+<html lang="en">
+<style>
 
-    </style>
-<head>
-    <link rel="stylesheet" href="static/style.css">
-    <meta charset="UTF-8">
+.bg-cover {
+    background-size: cover !important;
+}
+
+#left, #right, #center {box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  outline: 20px;
+  margin: 10px;
+  width: 95%;
+  text-align: center;
+}
+
+
+</style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>Tippr</title>
-</head>
-<body>
-    <h1 id="head">
-        Tippr
-    </h1>
+  </head>
 
-    <h2 id="subhead">
-        Tips Made Easier
-    </h2>
+  <body>
 
-    <div id="createaccount">
-        <p><b><a href="{{ url_for('login') }}">Create An Account</b></a><br>
-        Create your account today and start saving time and money while making sure your employees accurately get the
-        tips they earned. Now that's what we call efficiency.</p>
+
+<header>
+  <!-- Full Page Image Header with Vertically Centered Content -->
+<header class="masthead">
+  <!-- Bootstrap Static Header -->
+<div style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/static/mainmoney.jpg);
+            width: 100%;
+            margin: auto;"
+     class="jumbotron bg-cover text-white"
+
+>
+    <div class="container py-5 text-center">
+        <h1 class="display-4 font-weight-bold">Tippr</h1>
+      <h2>Tips Made Easier</h2>
+
+        <button type="button" class="btn btn-dark" onclick="window.location.href='{{ url_for('signup') }}' ">Get Started</button><br><br>
+      <button type="button" class="btn btn-dark" onclick="window.location.href='{{ url_for('login') }}' ">Log In</button>
     </div>
+</div>
 
-    <div id="about">
-        <p><b>About</b><br>
-            Tippr was created to be a better solution for calculating tips. It was inspired by the time-consuming
-            tip calculation at an international drink chain.
-        </p>
-    </div>
-
-    <div id="features">
-        <p><b>Features</b><br>
+</header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col" id="left"><br>
+        <h2> Features </h2>
         <ul>
-            <li>Add and remove employees easily</li>
-            <li>Give managers easy access to your dashboard</li>
-            <li>Glean insight about tips over time</li>
-        </ul></p>
-    </div>
+          <h3>Log Your Tips.</h3>
+          <h3>Track Tips Over Time To See What Times of The Year, Week, and Day Make The Most.</h3>
+          <h3>Generate Reports To Use For Your Tax Reporting.</h3>
+      </div>
+      <div class="col" id="center"><br>
+        <h2>Our Story</h2><br>
+        <h3>Tippr was born of the frustration of calculating tips and track them by hand at an international drink chain.
+            We knew there had to be a better way, and the Tippr platform was born of the labor of many sleepless nights.
+          <br><br></h3>
+      </div>
+      <div class="col" id="right"><br>
+      <h2>Pricing</h2>
+        <h3>Tippr is Currently Free!
+        However we plan to move to a model of charging $1/month per user, sadly, we gotta pay the bills.
+        We could also switch to a patreon model, depending on support.</h3>
+      </div>
 
-    <div id="login">
-        <button type="button" onclick="window.location.href='{{ url_for('login') }}' " >Login</button>
     </div>
+  </div>
 
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
